@@ -46,8 +46,20 @@
   - /sign-in
   - /sign-up
 - Group 3
+
   - /admin
   - /admin/users
+
+<br />
+
+- 결과 예시
+
+  ![example1](public/example1.png)
+  ![example2](public/example2.png)
+  ![example3](public/example3.png)
+  ![example4](public/example4.png)
+  ![example5](public/example5.png)
+  ![example6](public/example6.png)
 
 <br />
 <br />
@@ -89,6 +101,10 @@
 
 위 REST API 명세를 바탕으로 데이터를 호출하는 custom hook을 구현하고 /pokemons 페이지에 예시와 같이 ui를 구현합니다.
 
+![example7](public/example7.png)
+
+- 이미지는 https://placehold.co/600x800.png 경로의 이미지를 사용합니다.
+
 <br />
 
 ### 2-3. Pagination 적용하기 ( 25점 )
@@ -97,7 +113,7 @@
 
 > 제약사항 2. [@tanstack/react-query](https://tanstack.com/query/latest) 라이브러리를 사용합니다.
 
-위 REST API 명세를 참고하여 아래와 같은 페이지네이션 ui 및 기능을 구현합니다. ( hint: api의 응답을 주의깊게 보세요. )
+위 REST API 명세를 참고하여 페이지네이션 ui 및 기능을 구현합니다. ( hint: api의 응답을 주의깊게 보세요. )
 
 <br />
 <br />
@@ -106,7 +122,7 @@
 
 2번 문항에서 작성한 UI에 아래 제약사항들을 적용합니다.
 
-### 3-1. Card 내부 요소들에 container-query를 적용합니다. ( 5점 )
+### 3-1. Card 내부의 name에 container-query를 적용하여 font-size를 Card 사이즈에 반응하도록 구현합니다. ( 5점 )
 
 - tailwindcss로만 구현합니다 ( 5점 )
 
