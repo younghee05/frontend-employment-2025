@@ -124,10 +124,10 @@
 
 2번 문항에서 작성한 UI에 아래 제약사항들을 적용합니다.
 
-### 3-1. Card 내부의 name에 container-query를 적용하여 font-size를 Card 사이즈에 반응하도록 구현합니다. ( 5점 )
+### 3-1. Card 내부의 name에 container-query와 clamp를 적용하여 font-size를 Card 사이즈에 반응하도록 구현합니다. ( 5점 )
 
 - tailwindcss로만 구현합니다 ( 5점 )
 
-### 3-2. 반응형 디자인을 @media를 사용하지 않고 구현합니다. ( hint: CSS Grid auto-fill ) ( 10점 )
+### 3-2. 반응형 디자인을 @media를 사용하지 않고 구현합니다. ( hint: CSS Grid auto-fill ) ( 15점 )
 
-- tailwindcss로만 구현합니다 ( 10점 )
+- tailwindcss로만 구현합니다 ( 5점 )
