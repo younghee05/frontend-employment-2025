@@ -54,11 +54,11 @@
 
 - 결과 예시
 
-  ![example1](public/example1.png)
-  ![example2](public/example2.png)
-  ![example3](public/example3.png)
-  ![example4](public/example4.png)
-  ![example5](public/example5.png)
+  ![example1](public/example1.png) <br />
+  ![example2](public/example2.png) <br />
+  ![example3](public/example3.png) <br />
+  ![example4](public/example4.png) <br />
+  ![example5](public/example5.png) <br />
   ![example6](public/example6.png)
 
 <br />
@@ -85,10 +85,12 @@
 
 ### 2-1. zustand로 전역 상태 관리 ( 10점 )
 
-> 제약사항: 전역상태관리는 zustand를 사용합니다.
+> 제약사항 1. 전역상태관리는 zustand를 사용합니다.
+> 제약사항 2. header와 sidebar는 서로 다른 컴포넌트여야 합니다.
 
 - Group 1 레이아웃에 header와 sidebar를 만드세요. ( 2점 )
-- header의 menubar를 클릭하면 sidebar가 열고 닫기게 기능을 구현하세요. ( 5점 )
+  ![example8](public/example8.png)
+- header의 MenuToggle을 클릭하면 sidebar가 열고 닫기게 기능을 구현하세요. ( 5점 )
   - 새로고침했을때 이전 상태가 유지되게 합니다. ( 5점 )
 
 <br />
