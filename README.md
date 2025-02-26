@@ -24,9 +24,11 @@
 <br />
 <br />
 
-## 1. 라우팅 구성 정확도 ( 15점 )
+## 1. 라우팅 구성 정확도 ( 10점 )
 
 ### 1-1. 아래 URL로 접속 가능한 페이지들을 구성하세요. ( 5점 )
+
+[참고 문서: https://nextjs.org/docs/app/getting-started/layouts-and-pages](https://nextjs.org/docs/app/getting-started/layouts-and-pages)
 
 - /
 - /sign-in
@@ -37,7 +39,9 @@
 
 <br />
 
-### 1-2. 아래 그룹별로 서로 다른 레이아웃을 적용하세요. ( 10점 )
+### 1-2. 아래 그룹별로 서로 다른 레이아웃을 적용하세요. ( 5점 )
+
+[참고 문서: https://nextjs.org/docs/app/building-your-application/routing/route-groups](https://nextjs.org/docs/app/building-your-application/routing/route-groups)
 
 - Group 1
   - /
@@ -64,14 +68,41 @@
 <br />
 <br />
 
-## 2. 상태관리 및 @tanstack/react-query 사용 적절성 ( 55점 )
+## 2. 상태관리 및 Rest API 호출 적절성 ( 40점 )
+
+### 2-1. state 사용 테스트 ( 10점 )
+
+- number 타입의 `count` state를 구현하세요. ( 2점 )
+
+- `count`값을 1 증가시키는 버튼을 구현하세요. ( 4점 )
+
+  - count 값이 10 초과 하지 않게 합니다.
+
+- `count`값을 1 감소시키는 버튼을 구현하세요. ( 4점 )
+  - count 값이 0 미만이 되지 않게 합니다.
+
+<br />
+
+### 2-2. zustand로 전역 상태 관리 ( 15점 )
+
+- 2-1. 문항에서 만든 `count`값이 5 이상일때 다크모드, 5 미만일때 라이트모드 될 수 있게 구현하세요. ( 5점 )
+
+  - 다크모드에서는 화면에 보이는 ui요소들의 배경색, 글자색이 반전되게 합니다.
+
+- localStorage를 활용하여 `count`값과 다크모드, 라이트모드 상태를 새로고침 후에도 유지되게 구현합니다. ( 10점 )
+  - `count` 상태를 zustand로 변경하지 않습니다.
+
+<br />
+
+### 2-3. http 호출 및 응답 데이터 상태 관리 ( 15점 )
+
+> 제약사항 1. page.tsx, layout.tsx에 'use client' 지시어를 사용하지 않습니다.
 
 ### REST API 명세
 
 1\) 엔드포인트
 
-- URL: https://pokeapi.co/api/v2/pokemon
-- Method: GET
+- URL: http://localhost:3000/api/pokemon
 
 2\) 요청 파라미터
 | 이름 | 타입 | 기본값 | 설명 |
@@ -79,55 +110,10 @@
 | limit | number | 20 | 가져올 포켓몬 개수(1 이상 권장) |
 | offset | number | 0 | 이미 확인한 포켓몬 수(시작 지점) |
 
-예\) GET https://pokeapi.co/api/v2/pokemon?limit=20&offset=0
+예\) GET http://localhost:3000/api/pokemon?limit=20&offset=0
 
 ---
-
-### 2-1. zustand로 전역 상태 관리 ( 10점 )
-
-> 제약사항 1. 전역상태관리는 zustand를 사용합니다.
-> 제약사항 2. header와 sidebar는 서로 다른 컴포넌트여야 합니다.
-
-- Group 1 레이아웃에 header와 sidebar를 만드세요. ( 2점 )
-  ![example8](public/example8.png)
-- header의 MenuToggle을 클릭하면 sidebar가 열고 닫기게 기능을 구현하세요. ( 5점 )
-  - 새로고침했을때 이전 상태가 유지되게 합니다. ( 5점 )
-
-<br />
-
-### 2-2. http 호출 및 응답 데이터 상태 관리 ( 20점 )
-
-> 제약사항 1. page.tsx, layout.tsx에 'use client' 지시어를 사용하지 않습니다.
-
-> 제약사항 2. [@tanstack/react-query](https://tanstack.com/query/latest) 라이브러리를 사용합니다.
 
 위 REST API 명세를 바탕으로 데이터를 호출하는 custom hook을 구현하고 /pokemons 페이지에 예시와 같이 ui를 구현합니다.
 
 ![example7](public/example7.png)
-
-- 이미지는 https://placehold.co/600x800.png 경로의 이미지를 사용합니다.
-
-<br />
-
-### 2-3. Pagination 적용하기 ( 25점 )
-
-> 제약사항 1. 2-2에서 작성한 Component와는 별개의 Component를 작성합니다.
-
-> 제약사항 2. [@tanstack/react-query](https://tanstack.com/query/latest) 라이브러리를 사용합니다.
-
-위 REST API 명세를 참고하여 페이지네이션 ui 및 기능을 구현합니다. ( hint: api의 응답을 주의깊게 보세요. )
-
-<br />
-<br />
-
-## 3. CSS/반응형 구현 능력 ( 30점 )
-
-2번 문항에서 작성한 UI에 아래 제약사항들을 적용합니다.
-
-### 3-1. Card 내부의 name에 container-query와 clamp를 적용하여 font-size를 Card 사이즈에 반응하도록 구현합니다. ( 5점 )
-
-- tailwindcss로만 구현합니다 ( 5점 )
-
-### 3-2. 반응형 디자인을 @media를 사용하지 않고 구현합니다. ( hint: CSS Grid auto-fill ) ( 15점 )
-
-- tailwindcss로만 구현합니다 ( 5점 )
