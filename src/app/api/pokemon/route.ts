@@ -27,6 +27,7 @@ export async function GET(request: NextRequest) {
     data.results.map(async (pokemon: { name: string; url: string }) => {
       const res = await fetch(pokemon.url);
       const details = await res.json();
+
       return {
         name: details.name,
         image: details.sprites.front_default,
